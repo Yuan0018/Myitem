@@ -1,5 +1,7 @@
 package com.example.chaoliuzhikongspring.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,6 +13,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 public class user_info {
+    @TableId(value = "user_id", type = IdType.INPUT)
     private String user_id;
     private String user_name;
     private String user_phone;

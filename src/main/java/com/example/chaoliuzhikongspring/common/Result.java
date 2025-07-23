@@ -16,6 +16,10 @@ public class Result<T> {
         Result result = new Result("200", "success", null);
         return result;
     }
+    public static <T> Result<T> success(String code, String message, T data) {
+        Result result = new Result(code, message, data);
+        return result;
+    }
 //    成功响应带数据
     public static <T> Result<T> success(T data) {
         Result result = new Result("200", "success", data);
@@ -27,8 +31,13 @@ public class Result<T> {
         return result;
     }
 //    响应失败带数据
-    public static <T> Result<T> error(String message) {
-        Result result = new Result("400", "error", message);
+    public static <T> Result<T> error(T data) {
+        Result result = new Result("400", "error", data);
+        return result;
+    }
+//    响应失败自定义
+    public static <T> Result<T> error(String code, String message, T data) {
+        Result result = new Result(code, message, data);
         return result;
     }
 }
